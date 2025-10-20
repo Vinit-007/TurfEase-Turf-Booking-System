@@ -1,0 +1,167 @@
+/* Import Bootstrap 5 */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css");
+
+/* Custom variables */
+:root {
+  --maxw: 1100px;
+  --accent: #1e90ff;
+  --muted: #666;
+}
+
+/* Reset & base styles */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+  color: #222;
+  line-height: 1.4;
+  background: #f8f9fa;
+}
+
+/* Container */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Navbar */
+.nav {
+  background: #111;
+  color: #fff;
+  padding: 12px 0;
+}
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.brand {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 12px;
+}
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Grid layout for cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Card styling */
+.card {
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-small {
+  padding: 6px 8px;
+  font-size: 0.9rem;
+}
+.btn-warn {
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+}
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+/* Forms */
+.form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+textarea {
+  resize: vertical;
+}
+
+/* Tables */
+.slots,
+.bookings,
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+.slots th,
+.slots td,
+.bookings th,
+.bookings td,
+table th,
+table td {
+  padding: 8px;
+  border: 1px solid #eee;
+  text-align: left;
+}
+.slots tr.booked {
+  background: #f8d7da;
+}
+
+/* Flash messages */
+.flash-wrap {
+  margin: 12px 0;
+}
+.flash {
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+.flash.success {
+  background: #d4edda;
+  color: #155724;
+}
+.flash.danger {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Footer */
+.footer {
+  background: #f5f5f5;
+  padding: 12px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .nav .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    margin-top: 8px;
+  }
+}

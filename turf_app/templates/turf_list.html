@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container my-4">
+  <h2 class="mb-4">All Turfs</h2>
+
+  <form
+    class="row g-2 mb-4"
+    method="get"
+    action="{{ url_for('main.turf_list') }}"
+  >
+    <div class="col-md-8 col-sm-12">
+      <input
+        type="text"
+        name="city"
+        class="form-control"
+        placeholder="Search by city"
+        value="{{ request.args.get('city','') }}"
+      />
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <button type="submit" class="btn btn-primary w-100">Search</button>
+    </div>
+  </form>
+
+  {% if turfs %}
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for turf in turfs %}
+    <div class="col">
+      <div class="card h-100">
+        {% if turf.image %}
+        <img
+          src="{{ url_for('static', filename='images/' + turf.image) }}"
+          class="card-img-top"
+          alt="{{ turf.name }}"
+        />
+        {% endif %}
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ turf.name }}</h5>
+          <p class="card-text text-muted">
+            {{ turf.city }} — ₹{{ turf.price_per_hour }} / hr
+          </p>
+          <p class="card-text">{{ turf.address }}</p>
+          <a
+            href="{{ url_for('main.turf_details', turf_id=turf.id) }}"
+            class="btn btn-success mt-auto"
+            >Details & Slots</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="alert alert-info">No turfs found.</div>
+  {% endif %}
+</div>
+
+<style>
+  .card img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+</style>
+{% endblock %}

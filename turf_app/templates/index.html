@@ -1,0 +1,99 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4">Welcome to TurfEase</h1>
+    <p class="lead">Find football turfs and book slots quickly and easily.</p>
+  </div>
+
+  <section class="grid">
+    {% for turf in turfs %}
+    <article class="card turf-card">
+      {% if turf.image %}
+      <img
+        src="{{ url_for('static', filename=turf.image) }}"
+        alt="{{ turf.name }}"
+        class="card-img"
+      />
+      {% endif %}
+      <div class="card-body">
+        <h3 class="card-title">{{ turf.name }}</h3>
+        <p class="card-subtitle">
+          {{ turf.city }} — ₹{{ turf.price_per_hour }} / hr
+        </p>
+        <p class="card-text">
+          {{ turf.description[:120] ~ ("..." if turf.description|length > 120
+          else "") }}
+        </p>
+        <a
+          class="btn btn-primary"
+          href="{{ url_for('main.turf_details', turf_id=turf.id) }}"
+          >View Details</a
+        >
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+
+  <div class="text-center mt-4">
+    <a href="{{ url_for('main.turf_list') }}" class="btn btn-outline-primary"
+      >See All Turfs</a
+    >
+  </div>
+</div>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: #fff;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-title {
+    margin-bottom: 0.5rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    text-decoration: none;
+  }
+</style>
+{% endblock %}

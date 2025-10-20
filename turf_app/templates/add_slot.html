@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container my-4">
+  <h2 class="mb-4">Add Slot for <strong>{{ turf.name }}</strong></h2>
+
+  <form method="post" class="row g-3 needs-validation" novalidate>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+    <div class="col-md-4">
+      <label for="date" class="form-label">Date *</label>
+      <input type="date" class="form-control" id="date" name="date" required />
+      <div class="invalid-feedback">Please select a date.</div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="start_time" class="form-label">Start Time *</label>
+      <input
+        type="time"
+        class="form-control"
+        id="start_time"
+        name="start_time"
+        required
+      />
+      <div class="invalid-feedback">Please enter start time.</div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="end_time" class="form-label">End Time *</label>
+      <input
+        type="time"
+        class="form-control"
+        id="end_time"
+        name="end_time"
+        required
+      />
+      <div class="invalid-feedback">Please enter end time.</div>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-success">Add Slot</button>
+      <a href="{{ url_for('main.owner_dashboard') }}" class="btn btn-secondary"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>
+
+<script>
+  // Set min date to today
+  document.addEventListener("DOMContentLoaded", function () {
+    const today = new Date().toISOString().split("T")[0];
+    document.getElementById("date").setAttribute("min", today);
+  });
+
+  // Bootstrap form validation
+  (function () {
+    "use strict";
+    const forms = document.querySelectorAll(".needs-validation");
+    Array.from(forms).forEach((form) => {
+      form.addEventListener(
+        "submit",
+        (event) => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+</script>
+
+<style>
+  .container {
+    max-width: 800px;
+  }
+</style>
+{% endblock %}

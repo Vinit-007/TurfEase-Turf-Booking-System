@@ -1,0 +1,121 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container my-4">
+  <h2 class="mb-4">Add New Turf</h2>
+
+  <form
+    method="post"
+    enctype="multipart/form-data"
+    class="needs-validation"
+    novalidate
+  >
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Turf Name *</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Enter turf name"
+        required
+      />
+      <div class="invalid-feedback">Please enter a turf name.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="city" class="form-label">City</label>
+      <input
+        type="text"
+        class="form-control"
+        id="city"
+        name="city"
+        placeholder="Enter city"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        name="address"
+        placeholder="Enter address"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Price per Hour (₹) *</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        name="price"
+        step="0.01"
+        value="500"
+        min="0"
+        required
+      />
+      <div class="invalid-feedback">Please enter a valid price.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">Turf Image</label>
+      <input
+        type="file"
+        class="form-control"
+        id="image"
+        name="image"
+        accept="image/*"
+      />
+      <div class="form-text">Optional: Upload a photo of your turf</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        id="description"
+        name="description"
+        rows="4"
+        placeholder="Optional description about your turf facilities, size, etc."
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Turf</button>
+    <a
+      href="{{ url_for('main.owner_dashboard') }}"
+      class="btn btn-secondary ms-2"
+      >Cancel</a
+    >
+  </form>
+</div>
+
+<script>
+  // Bootstrap client-side validation
+  (function () {
+    "use strict";
+    const forms = document.querySelectorAll(".needs-validation");
+    Array.from(forms).forEach((form) => {
+      form.addEventListener(
+        "submit",
+        (event) => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+</script>
+
+<style>
+  .container {
+    max-width: 800px;
+  }
+</style>
+{% endblock %}
