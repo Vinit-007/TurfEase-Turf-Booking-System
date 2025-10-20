@@ -114,10 +114,10 @@ turf_app/
 
 - **Backend**: Flask, SQLAlchemy, WTForms
 - **Frontend**: HTML5, CSS3, JavaScript, Bootstrap 5
-- **Database**: SQLite (development), PostgreSQL ready
+- **Database**: SQLite (development)
 - **Authentication**: Flask-Login
-- **Security**: CSRF protection, password hashing
-- **File Upload**: Secure image handling
+- **Security**: password hashing
+- **File Upload**: image handling
 
 ## 👥 User Roles
 
@@ -142,7 +142,7 @@ turf_app/
 
 ### Features
 - Add new turf attributes in `models.py`
-- Extend booking system with additional features
+- Extend the booking system with additional features
 - Integrate payment gateways
 - Add email notifications
 
@@ -158,9 +158,43 @@ turf_app/
 | GET | `/owner/dashboard` | Owner dashboard |
 | POST | `/owner/add-turf` | Add new turf |
 | POST | `/owner/turf/<id>/add-slot` | Add slot to turf |
-## Notes & extensions
-- The app stores timeslots as simple strings (YYYY-MM-DD and HH:MM). For production, convert to `Date` and `Time` types and add validation.
-- Add email confirmation, payments gateway integration, and dynamic pricing (peak/off-peak) for a production-ready app.
-- Add analytics for owners (utilization, revenue report).
+
+### Future Enhancements
+
+## 💳 Payment Integration
 
 
+## 🎨 User Experience Improvements
+
+- [ ] **Advanced Search & Filtering**
+  - Price range filtering
+  - Rating-based sorting
+  - Amenities filtering (lights, changing rooms, etc.)
+  - Instant booking confirmations
+    
+- [ ] **Interactive Maps**
+  - Google Maps integration
+  - Turf location visualization
+  - Route planning to turfs
+
+
+## 📊 Advanced Analytics
+
+- [ ] **Owner Analytics Dashboard**
+  - Revenue trends and forecasts
+  - Peak hour analysis
+    
+- [ ] **Player Insights**
+  - Booking history analytics
+  - Preferred time slots
+
+
+## 🌐 Social Features
+
+- [ ] **User Reviews & Ratings**
+  - Star-based rating system
+  - Verified reviews
+  - Photo reviews
+    
+- [ ] **Social Sharing**
+  - Share turf listings on social media
