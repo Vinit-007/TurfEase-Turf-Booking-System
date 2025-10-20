@@ -1,36 +1,73 @@
-# CozyConnect - Football Turf Booking (Flask)
+🏟️ TurfEase - Football Turf Booking System
+https://img.shields.io/badge/TurfEase-Football%2520Turf%2520Booking-brightgreen
+https://img.shields.io/badge/Python-3.8%252B-blue
+https://img.shields.io/badge/Flask-2.3.3-lightgrey
+https://img.shields.io/badge/Bootstrap-5.3.2-purple
 
-## Overview
-A simple Flask + SQLite application that allows turf owners to register turfs and add available time slots, and players to browse turfs and book available slots. Includes owner dashboard for CRUD operations on turfs and slots, and player booking history.
+A comprehensive web application for booking football turfs, managing turf listings, and handling slot reservations. Built with Flask and modern web technologies.
 
-This project is intentionally lightweight and easy to run locally. It focuses on core CRUD flows and a responsive, mobile-friendly UI.
+🌟 Features
+👥 User Features
+User Registration & Authentication - Secure signup/login system
 
-## Features
-- Owner registration and dashboard (add/edit/delete turfs, add/delete slots)
-- Player registration and booking flow
-- Booking history for players
-- Simple search by city
-- Responsive UI (mobile-first)
-- SQLite database (auto-created at first run)
+Turf Discovery - Browse and search turfs by city
 
-## Tech stack
-- Flask, Flask-SQLAlchemy, Flask-Login, Flask-WTF
-- SQLite database
+Slot Booking - Book available time slots
+
+Booking History - View past and current bookings
+
+Booking Management - Cancel bookings as needed
+
+🏢 Owner Features
+Turf Management - Add, edit, and delete turf listings
+
+Slot Management - Create and manage available time slots
+
+Dashboard Analytics - View revenue, bookings, and utilization metrics
+
+Image Upload - Add photos for turf listings
+
+🎯 General Features
+Responsive Design - Mobile-friendly Bootstrap interface
+
+CSRF Protection - Secure form submissions
+
+Real-time Availability - Live slot status updates
+
+Search Functionality - Find turfs by location
 
 ## File structure
 ```
-football_turf_booking/
-├── turf_app/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── auth.py
-│   ├── main.py
-│   ├── templates/
-│   └── static/
-├── config.py
-├── run.py
-├── requirements.txt
-└── README.md
+turf_app/
+├── __init__.py              # Flask app factory
+├── config.py               # Configuration settings
+├── models.py               # Database models
+├── forms.py                # WTForms definitions
+├── auth.py                 # Authentication routes
+├── main.py                 # Main application routes
+├── requirements.txt        # Python dependencies
+├── static/
+│   ├── css/
+│   │   └── style.css       # Custom styles
+│   ├── js/
+│   │   └── script.js       # JavaScript utilities
+│   └── images/             # Uploaded turf images
+└── templates/
+    ├── base.html           # Base template
+    ├── index.html          # Homepage
+    ├── auth/
+    │   ├── login.html      # Login page
+    │   └── register.html   # Registration page
+    ├── turfs/
+    │   ├── turf_list.html  # All turfs listing
+    │   └── turf_details.html # Individual turf page
+    ├── owner/
+    │   ├── dashboard.html  # Owner dashboard
+    │   ├── add_turf.html   # Add turf form
+    │   ├── edit_turf.html  # Edit turf form
+    │   └── add_slot.html   # Add slot form
+    └── booking/
+        └── booking_history.html # User bookings
 ```
 
 ## Quick start (local)
