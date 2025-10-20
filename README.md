@@ -1,4 +1,4 @@
-# 🏟️ TurfEase - Football Turf Booking System
+# 🏟️ TurfEase - Turf Booking System
 
 ![TurfEase](https://img.shields.io/badge/TurfEase-Football%20Turf%20Booking-brightgreen)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
