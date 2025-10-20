@@ -24,7 +24,6 @@ A comprehensive web application for booking football turfs, managing turf listin
 
 ### 🎯 General Features
 - **Responsive Design** - Mobile-friendly Bootstrap interface
-- **CSRF Protection** - Secure form submissions
 - **Real-time Availability** - Live slot status updates
 - **Search Functionality** - Find turfs by location
 
@@ -90,11 +89,78 @@ turf_app/
    python run.py
    ```
 4. Open http://127.0.0.1:5000 in your browser.
+## 🗄️ Database Models
 
+### User
+- User authentication and profile management
+- Role-based access (Player/Owner)
+
+### Turf
+- Turf listing information
+- Location, pricing, and description
+- Image upload support
+
+### Slot
+- Time slot management
+- Date and time availability
+- Booking status tracking
+
+### Booking
+- Reservation management
+- Status tracking (confirmed/cancelled)
+- Relationship management
+
+## 🛠️ Technology Stack
+
+- **Backend**: Flask, SQLAlchemy, WTForms
+- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap 5
+- **Database**: SQLite (development), PostgreSQL ready
+- **Authentication**: Flask-Login
+- **Security**: CSRF protection, password hashing
+- **File Upload**: Secure image handling
+
+## 👥 User Roles
+
+### Player
+- Browse and search turfs
+- Book available slots
+- View booking history
+- Cancel bookings
+
+### Turf Owner
+- All Player features
+- Add and manage turf listings
+- Create time slots
+- View analytics and revenue
+
+## 🎨 Customization
+
+### Styling
+- Modify `static/css/style.css` for custom styles
+- Update Bootstrap theme in `base.html`
+- Custom color scheme using CSS variables
+
+### Features
+- Add new turf attributes in `models.py`
+- Extend booking system with additional features
+- Integrate payment gateways
+- Add email notifications
+
+## 📝 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/` | Homepage |
+| GET | `/turfs` | List all turfs |
+| GET | `/turf/<id>` | Turf details |
+| POST | `/book/<slot_id>` | Book a slot |
+| GET | `/my-bookings` | User bookings |
+| GET | `/owner/dashboard` | Owner dashboard |
+| POST | `/owner/add-turf` | Add new turf |
+| POST | `/owner/turf/<id>/add-slot` | Add slot to turf |
 ## Notes & extensions
 - The app stores timeslots as simple strings (YYYY-MM-DD and HH:MM). For production, convert to `Date` and `Time` types and add validation.
 - Add email confirmation, payments gateway integration, and dynamic pricing (peak/off-peak) for a production-ready app.
 - Add analytics for owners (utilization, revenue report).
 
-## License
-MIT
+
