@@ -1,40 +1,45 @@
-🏟️ TurfEase - Football Turf Booking System
-https://img.shields.io/badge/TurfEase-Football%2520Turf%2520Booking-brightgreen
-https://img.shields.io/badge/Python-3.8%252B-blue
-https://img.shields.io/badge/Flask-2.3.3-lightgrey
-https://img.shields.io/badge/Bootstrap-5.3.2-purple
+# 🏟️ TurfEase - Football Turf Booking System
+
+![TurfEase](https://img.shields.io/badge/TurfEase-Football%20Turf%20Booking-brightgreen)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Flask](https://img.shields.io/badge/Flask-2.3.3-lightgrey)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.2-purple)
 
 A comprehensive web application for booking football turfs, managing turf listings, and handling slot reservations. Built with Flask and modern web technologies.
 
-🌟 Features
-👥 User Features
-User Registration & Authentication - Secure signup/login system
+## 🌟 Features
 
-Turf Discovery - Browse and search turfs by city
+### 👥 User Features
+- **User Registration & Authentication** - Secure signup/login system
+- **Turf Discovery** - Browse and search turfs by city
+- **Slot Booking** - Book available time slots
+- **Booking History** - View past and current bookings
+- **Booking Management** - Cancel bookings as needed
 
-Slot Booking - Book available time slots
+### 🏢 Owner Features
+- **Turf Management** - Add, edit, and delete turf listings
+- **Slot Management** - Create and manage available time slots
+- **Dashboard Analytics** - View revenue, bookings, and utilization metrics
+- **Image Upload** - Add photos for turf listings
 
-Booking History - View past and current bookings
+### 🎯 General Features
+- **Responsive Design** - Mobile-friendly Bootstrap interface
+- **CSRF Protection** - Secure form submissions
+- **Real-time Availability** - Live slot status updates
+- **Search Functionality** - Find turfs by location
 
-Booking Management - Cancel bookings as needed
+## 🚀 Quick Start
 
-🏢 Owner Features
-Turf Management - Add, edit, and delete turf listings
+### Prerequisites
+- Python 3.8 or higher
+- pip (Python package manager)
 
-Slot Management - Create and manage available time slots
+### Installation
 
-Dashboard Analytics - View revenue, bookings, and utilization metrics
-
-Image Upload - Add photos for turf listings
-
-🎯 General Features
-Responsive Design - Mobile-friendly Bootstrap interface
-
-CSRF Protection - Secure form submissions
-
-Real-time Availability - Live slot status updates
-
-Search Functionality - Find turfs by location
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/turf-ease.git
+   cd turf-ease
 
 ## File structure
 ```
