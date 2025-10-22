@@ -78,6 +78,7 @@ turf_app/
 1. Create a virtual env and activate it:
    ```bash
    python -m venv venv
+   py -m venv venv
    source venv/bin/activate   # on Windows: venv\Scripts\activate
    ```
 2. Install dependencies:
